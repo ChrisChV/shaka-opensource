@@ -15,5 +15,8 @@ jobs:
         with:
           version: latest
 
+      - name: Start servers
+        run: supabase start
+
       - name: Validate migrations
         run: make validate-migrations
