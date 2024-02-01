@@ -18,5 +18,8 @@ jobs:
       - name: Start servers
         run: supabase start
 
+      - name: Create diff dockers
+        run: supabase db diff
+
       - name: Validate migrations
         run: make validate-migrations
