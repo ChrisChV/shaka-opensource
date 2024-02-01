@@ -1,0 +1,19 @@
+name: Validate Supabase
+
+on: 
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate_supabase:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+
+      - name: Validate migrations
+        run: make validate-migrations
